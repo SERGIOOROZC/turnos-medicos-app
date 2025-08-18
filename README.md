@@ -24,12 +24,35 @@ DB_NAME=your_database_name
 
 ## Uso
 
-Para iniciar el servidor, ejecuta desde el directorio `src`:
+El servidor se ejecutará en:
+👉 http://localhost:3000
 
-`node app.js`
+🗂️ Entidades principales
 
-## Entidades Principales
+Usuario 👤
+Representa la cuenta en el sistema. Tiene un rol (admin, medico, paciente) y credenciales de acceso.
 
-*   **Pacientes**: Información de los pacientes.
-*   **Médicos**: Información de los médicos y sus especialidades.
-*   **Turnos**: Detalles de los turnos agendados (fecha, hora, paciente, médico).
+Paciente 🧑‍🤝‍🧑
+Información personal de los pacientes vinculados a un usuario.
+
+Médico 🩺
+Datos de los médicos (nombre, apellido, especialidad).
+
+Turno 📅
+Representa una cita médica, con fecha, hora, médico y paciente asignado.
+
+📌 Endpoints principales
+
+/usuarios → CRUD de usuarios (solo admin)
+
+/pacientes → CRUD de pacientes
+
+/medicos → CRUD de médicos y ver turnos asignados
+
+/turnos → CRUD de turnos (crear, listar, borrar)
+
+/auth/login → Autenticación con email y contraseña
+
+/auth/register → Registro de usuarios
+
+/auth/perfil → Datos del usuario autenticado
