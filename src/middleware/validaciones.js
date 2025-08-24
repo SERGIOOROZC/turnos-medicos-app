@@ -50,3 +50,10 @@ export const validarTurno = [
     .withMessage("El estado debe ser 'libre', 'reservado' o 'cancelado'"),
   manejarErrores,
 ];
+
+// ✅ Validación para Login
+export const validarLogin = [
+  body("email").isEmail().withMessage("Debe ser un email válido"),
+  body("password").notEmpty().withMessage("La contraseña es obligatoria"),
+  manejarErrores,
+];
